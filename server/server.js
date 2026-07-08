@@ -5,6 +5,9 @@ require("dotenv").config();
 const pool = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
 const problemRoutes = require("./routes/problemRoutes");
+const submissionRoutes = require(
+    "./routes/submissionRoutes"
+);
 
 const app = express();
 
@@ -42,6 +45,11 @@ app.get("/api/health/database", async (req, res) => {
 
 app.use("/api/auth", authRoutes);
 app.use("/api/problems", problemRoutes);
+app.use(
+    "/api/submissions",
+    submissionRoutes
+);
+
 
 const PORT = process.env.PORT || 5000;
 
