@@ -11,6 +11,9 @@ const submissionRoutes = require(
 const analyticsRoutes = require(
     "./routes/analyticsRoutes"
 );
+const recommendationRoutes = require(
+    "./routes/recommendationRoutes"
+);
 
 const app = express();
 
@@ -55,6 +58,10 @@ app.use(
 app.use(
     "/api/analytics",
     analyticsRoutes
+);
+app.use(
+    "/api/recommendations",
+    recommendationRoutes
 );
 
 

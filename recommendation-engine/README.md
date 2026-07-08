@@ -46,3 +46,21 @@ standard input.
 
 The engine writes JSON-formatted recommendation results to
 standard output for Node.js process integration.
+
+## Node.js Integration
+
+The Node.js backend starts the compiled recommendation engine
+as a child process using `child_process.spawn`.
+
+User topic analytics and problem metadata are serialized into
+a text-based input protocol and written to the C++ process
+through standard input.
+
+The C++ engine ranks unsolved problems using a
+`priority_queue` and writes JSON-formatted results to standard
+output.
+
+The Node.js backend parses the engine output and exposes the
+results through the authenticated REST endpoint:
+
+`GET /api/recommendations`
