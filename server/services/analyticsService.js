@@ -1,4 +1,8 @@
 const pool = require("../config/db");
+const {
+    getGoals
+} = require("./goalService");
+
 
 const getTopicPerformance = async (userId) => {
     const [topicRows] = await pool.query(
@@ -174,12 +178,13 @@ const getDashboardAnalytics = async (
     userId
 ) => {
     const [
-        userRows,
-        summaryRows,
-        difficultyRows,
-        recentActivityRows,
-        topicPerformance
-    ] = await Promise.all([
+    userRows,
+    summaryRows,
+    difficultyRows,
+    recentActivityRows,
+    topicPerformance,
+    goals
+] = await Promise.all([
         pool.query(
             `
             SELECT
@@ -273,7 +278,8 @@ const getDashboardAnalytics = async (
             [userId]
         ),
 
-        getTopicPerformance(userId)
+        getTopicPerformance(userId),
+        getGoals(userId)
     ]);
 
     if (userRows[0].length === 0) {
@@ -354,6 +360,14 @@ const getDashboardAnalytics = async (
         })
         .slice(0, 3);
 
+    const activeGoals = goals
+        .filter(
+            (goal) =>
+                goal.status === "Active" ||
+                goal.status === "Upcoming"
+        )
+        .slice(0, 3);
+
     return {
         user: {
             userId: user.user_id,
@@ -380,6 +394,8 @@ const getDashboardAnalytics = async (
         weakTopics,
 
         strongTopics,
+
+        activeGoals,
 
         recentActivity:
             buildSevenDayActivity(

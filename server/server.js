@@ -14,6 +14,13 @@ const analyticsRoutes = require(
 const recommendationRoutes = require(
     "./routes/recommendationRoutes"
 );
+const goalRoutes = require(
+    "./routes/goalRoutes"
+);
+const leaderboardRoutes = require(
+    "./routes/leaderboardRoutes"
+);
+
 
 const app = express();
 
@@ -63,6 +70,15 @@ app.use(
     "/api/recommendations",
     recommendationRoutes
 );
+app.use(
+    "/api/goals",
+    goalRoutes
+);
+app.use(
+    "/api/leaderboard",
+    leaderboardRoutes
+);
+
 
 
 const PORT = process.env.PORT || 5000;
