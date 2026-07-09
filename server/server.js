@@ -23,10 +23,13 @@ const leaderboardRoutes = require(
 
 
 const app = express();
-
-app.use(cors());
+app.use(
+    cors({
+        origin: "http://localhost:5173"
+    })
+);
 app.use(express.json());
-
+app.use(cors());
 app.get("/", (req, res) => {
     res.status(200).json({
         success: true,
