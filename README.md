@@ -12,7 +12,7 @@ CodeVault is a full-stack competitive programming analytics and problem recommen
 - DSA-based problem recommendation engine
 - Coding streak tracking
 - Leaderboard
-- User goals
+- User goal
 
 ## Tech Stack
 
