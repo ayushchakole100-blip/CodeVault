@@ -10,6 +10,9 @@ import DashboardLayout from
 import Dashboard from
     "./pages/Dashboard";
 
+import Problems from
+    "./pages/Problems";
+
 import Login from
     "./pages/Login";
 
@@ -52,6 +55,10 @@ const App = () => {
                 <Route
                     path="/dashboard"
                     element={<Dashboard />}
+                />
+                <Route
+                    path="/problems"
+                    element={<Problems />}
                 />
             </Route>
 
