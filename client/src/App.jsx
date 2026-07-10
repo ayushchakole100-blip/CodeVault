@@ -16,6 +16,9 @@ import Problems from
 import Recommendations from
     "./pages/Recommendations";
 
+import Goals from
+    "./pages/Goals";
+
 import Login from
     "./pages/Login";
 
@@ -66,6 +69,10 @@ const App = () => {
                 <Route
                     path="/recommendations"
                     element={<Recommendations />}
+                />
+                <Route
+                    path="/goals"
+                    element={<Goals />}
                 />
             </Route>
 
