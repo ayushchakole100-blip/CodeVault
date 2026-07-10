@@ -4,6 +4,9 @@ import {
     useState
 } from "react";
 
+import SolveButton from
+    "../components/SolveButton";
+
 import {
     CheckCircle2,
     ChevronRight,
@@ -31,8 +34,10 @@ const Problems = () => {
     const [topic, setTopic] =
         useState("All");
 
-    const [selectedProblem, setSelectedProblem] =
-        useState(null);
+    const [
+        selectedProblem,
+        setSelectedProblem
+    ] = useState(null);
 
     const [isLoading, setIsLoading] =
         useState(true);
@@ -64,7 +69,6 @@ const Problems = () => {
                     [];
 
                 setProblems(problemsData);
-
                 setTopics(topicsData);
             } catch (requestError) {
                 console.error(
@@ -139,6 +143,8 @@ const Problems = () => {
         problemId
     ) => {
         try {
+            setError("");
+
             const response = await api.get(
                 `/problems/${problemId}`
             );
@@ -377,12 +383,11 @@ const ProblemRow = ({
         problem.problemId ||
         problem.problem_id;
 
-    const isSolved =
-        Boolean(
-            problem.isSolved ??
-            problem.is_solved ??
-            problem.solved
-        );
+    const isSolved = Boolean(
+        problem.isSolved ??
+        problem.is_solved ??
+        problem.solved
+    );
 
     const topics =
         problem.topics || [];
@@ -516,7 +521,9 @@ const ProblemModal = ({
                     PROBLEM #{problemId}
                 </span>
 
-                <h2>{problem.title}</h2>
+                <h2>
+                    {problem.title}
+                </h2>
 
                 <div className="problem-modal-meta">
                     <DifficultyBadge
@@ -582,6 +589,12 @@ const ProblemModal = ({
                         analytics and future problem
                         recommendations.
                     </p>
+                </div>
+
+                <div className="problem-modal-section">
+                    <SolveButton
+                        problemId={problemId}
+                    />
                 </div>
             </article>
         </div>

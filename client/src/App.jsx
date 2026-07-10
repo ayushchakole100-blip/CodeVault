@@ -31,6 +31,9 @@ import Login from
 import Register from
     "./pages/Register";
 
+import SolveProblem from
+    "./pages/SolveProblem";
+
 import ProtectedRoute from
     "./routes/ProtectedRoute";
 
@@ -68,22 +71,32 @@ const App = () => {
                     path="/dashboard"
                     element={<Dashboard />}
                 />
+
                 <Route
                     path="/problems"
                     element={<Problems />}
                 />
+
+                <Route
+                    path="/problems/:problemId/solve"
+                    element={<SolveProblem />}
+                />
+
                 <Route
                     path="/recommendations"
                     element={<Recommendations />}
                 />
+
                 <Route
                     path="/goals"
                     element={<Goals />}
                 />
+
                 <Route
                     path="/analytics"
                     element={<Analytics />}
                 />
+
                 <Route
                     path="/leaderboard"
                     element={<Leaderboard />}

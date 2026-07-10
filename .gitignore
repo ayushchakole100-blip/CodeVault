@@ -19,3 +19,6 @@ algorithm-engine/*.out
 
 dist/
 build/
+
+server/temp/
+*.exe

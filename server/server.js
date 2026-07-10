@@ -20,6 +20,9 @@ const goalRoutes = require(
 const leaderboardRoutes = require(
     "./routes/leaderboardRoutes"
 );
+const judgeRoutes = require(
+    "./routes/judgeRoutes"
+);
 
 
 const app = express();
@@ -81,7 +84,10 @@ app.use(
     "/api/leaderboard",
     leaderboardRoutes
 );
-
+app.use(
+    "/api/judge",
+    judgeRoutes
+);
 
 
 const PORT = process.env.PORT || 5000;

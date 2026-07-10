@@ -3,9 +3,11 @@ import {
     useState
 } from "react";
 
+import SolveButton from
+    "../components/SolveButton";
+
 import {
     BrainCircuit,
-    ChevronRight,
     Lightbulb,
     RefreshCw,
     Sparkles,
@@ -315,15 +317,19 @@ const RecommendationCard = ({
                 </div>
 
                 <div className="recommendation-card-footer">
-                    <span>
-                        Recommendation score
-                    </span>
+                    <div className="recommendation-score-details">
+                        <span>
+                            Recommendation score
+                        </span>
 
-                    <strong>
-                        {score.toFixed(1)}
-                    </strong>
+                        <strong>
+                            {score.toFixed(1)}
+                        </strong>
+                    </div>
 
-                    <ChevronRight size={17} />
+                    <SolveButton
+                        problemId={problemId}
+                    />
                 </div>
             </div>
         </article>
