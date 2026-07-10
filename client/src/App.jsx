@@ -4,11 +4,20 @@ import {
     Routes
 } from "react-router-dom";
 
-import Dashboard from "./pages/Dashboard";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
+import DashboardLayout from
+    "./layouts/DashboardLayout";
 
-import ProtectedRoute from "./routes/ProtectedRoute";
+import Dashboard from
+    "./pages/Dashboard";
+
+import Login from
+    "./pages/Login";
+
+import Register from
+    "./pages/Register";
+
+import ProtectedRoute from
+    "./routes/ProtectedRoute";
 
 const App = () => {
     return (
@@ -34,13 +43,17 @@ const App = () => {
             />
 
             <Route
-                path="/dashboard"
                 element={
                     <ProtectedRoute>
-                        <Dashboard />
+                        <DashboardLayout />
                     </ProtectedRoute>
                 }
-            />
+            >
+                <Route
+                    path="/dashboard"
+                    element={<Dashboard />}
+                />
+            </Route>
 
             <Route
                 path="*"
