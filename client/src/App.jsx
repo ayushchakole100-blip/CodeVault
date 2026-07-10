@@ -13,6 +13,9 @@ import Dashboard from
 import Problems from
     "./pages/Problems";
 
+import Recommendations from
+    "./pages/Recommendations";
+
 import Login from
     "./pages/Login";
 
@@ -59,6 +62,10 @@ const App = () => {
                 <Route
                     path="/problems"
                     element={<Problems />}
+                />
+                <Route
+                    path="/recommendations"
+                    element={<Recommendations />}
                 />
             </Route>
 
