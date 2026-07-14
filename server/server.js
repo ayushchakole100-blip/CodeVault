@@ -32,7 +32,19 @@ app.use(
     })
 );
 app.use(express.json());
-app.use(cors());
+
+const allowedOrigins = [
+    "http://localhost:5173",
+    process.env.CLIENT_URL
+].filter(Boolean);
+
+app.use(
+    cors({
+        origin: allowedOrigins,
+        credentials: true
+    })
+);
+
 app.get("/", (req, res) => {
     res.status(200).json({
         success: true,
