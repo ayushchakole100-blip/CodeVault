@@ -9,7 +9,7 @@ const api = axios.create({
 api.interceptors.request.use(
     (config) => {
         const token =
-            localStorage.getItem("token");
+            localStorage.getItem("codevault_token");
 
         if (token) {
             config.headers.Authorization =
