@@ -1,24 +1,49 @@
+# Dependencies
 node_modules/
 
+# Environment files
 .env
-
-recommendation-engine/recommendation.exe
-
 .env.local
 .env.production
 
+# Logs
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-.DS_Store
-Thumbs.db
-
-.vscode/
-
-algorithm-engine/*.exe
-algorithm-engine/*.out
-
+# Build output
 dist/
 build/
 
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code / IDE
+.vscode/
+.idea/
+
+# Recommendation Engine
+recommendation-engine/recommendation.exe
+recommendation-engine/*.exe
+recommendation-engine/*.out
+
+# Algorithm Engine
+algorithm-engine/*.exe
+algorithm-engine/*.out
+
+# Temporary files
 server/temp/
+
+# Executables
 *.exe
+
+# Coverage
+coverage/
+
+# Cache
+.cache/
+
+# Runtime files
+*.pid

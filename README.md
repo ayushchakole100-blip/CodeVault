@@ -143,43 +143,19 @@ JWT_SECRET=your_secret_key
 
 ---
 
-## 📸 Screenshots
+## 📄 Project Documentation
 
-### Login
+A detailed project report containing:
 
-*(Add screenshot later)*
+- Features
+- System Architecture
+- Database Schema
+- API Endpoints
+- UI Screenshots
+- Implementation Details
+- Future Scope
 
----
-
-### Dashboard
-
-*(Add screenshot later)*
-
----
-
-### Problems
-
-*(Add screenshot later)*
-
----
-
-### Solve Problem
-
-*(Add screenshot later)*
-
----
-
-### Analytics
-
-*(Add screenshot later)*
-
----
-
-### Leaderboard
-
-*(Add screenshot later)*
-
----
+📁 **Location:** `screenshots/CodeVault_Project_Report.pdf`
 
 ## 📌 Future Improvements
 
